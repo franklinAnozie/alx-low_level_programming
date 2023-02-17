@@ -11,13 +11,15 @@ for (number = '0'; number <= '9'; number++)
 {
 for (secondNumber = '0'; secondNumber <= '9'; secondNumber++)
 {
-if (number < secondNumber && number != secondNumber)
+if (number < secondNumber)
 {
 putchar(number);
 putchar(secondNumber);
 if (number != '8' || secondNumber <= '8')
+{
 putchar(',');
 putchar(' ');
+}
 }
 }
 }
