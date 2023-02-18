@@ -1,36 +1,28 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
- * main - a function that prints lowercase alphabets
- *
- * Return: Always 0 (Success)
+ * main - prints all possible combinations of two two-digit numbers
+ * Return: 0 (Success)
  */
 int main(void)
 {
-int number, secondNumber, thirdNumber, fourthNumber;
-for (number = '0'; number <= '9'; number++)
+int x, b;
+
+for (x = 0; x < 100; x++)
 {
-for (secondNumber = '0'; secondNumber <= '9'; secondNumber++)
+for (b = 0; b < 100; b++)
 {
-for (thirdNumber = '0'; thirdNumber <= '9'; thirdNumber++)
+if (x < b)
 {
-if (secondNumber <= thirdNumber)
-{
-for (fourthNumber = '0'; fourthNumber <= '9'; fourthNumber++)
-{
-if ((thirdNumber < fourthNumber) || (thirdNumber > fourthNumber && fourthNumber <= '9'))
-{
-putchar(number);
-putchar(secondNumber);
+putchar((x / 10) + 48);
+putchar((x % 10) + 48);
 putchar(' ');
-putchar(thirdNumber);
-putchar(fourthNumber);
-if (number != '9' || secondNumber <= '8')
+putchar((b / 10) + 48);
+putchar((b % 10) + 48);
+if (x != 98 || b != 99)
 {
 putchar(',');
-}
 putchar(' ');
-}
-}
 }
 }
 }
