@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * main - prints all possible combinations of two two-digit numbers
+ * print alphabet_x10 - prints all possible combinations of two two-digit numbers
  * Return: 0 (Success)
  */
 void print_alphabet_x10(void)
