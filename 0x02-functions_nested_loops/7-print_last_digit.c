@@ -8,4 +8,4 @@ int print_last_digit(int j){
     }
     _putchar(ld + '0');
     return (ld);
-};
+}

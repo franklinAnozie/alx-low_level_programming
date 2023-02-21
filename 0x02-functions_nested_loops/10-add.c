@@ -3,4 +3,4 @@ int add(int i, int j){
 
     sum = i + j;
     return (sum);
-};
+}
