@@ -6,9 +6,8 @@
 int main(void)
 {
 char toBePrinted[] = "_putchar";
-int i = sizeof(toBePrinted) / sizeof(toBePrinted[0]);
 int j = 0;
-while (j < i)
+while (j < 8)
 {
 _putchar(toBePrinted[j]);
 ++j;
