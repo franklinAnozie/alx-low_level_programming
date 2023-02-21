@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * print_sign - prints all possible combinations of two two-digit numbers
+ * @n: the character to check
  * Return: 0 (Success)
  */
 int print_sign(int n)
