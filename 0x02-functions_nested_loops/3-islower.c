@@ -1,6 +1,6 @@
 #include <ctype.h>
 /**
- * _islower - prints all possible combinations of two two-digit numbers
+ * _islower - prints lower case
  * Return: 0 (Success)
  */
 int _islower(int c)
