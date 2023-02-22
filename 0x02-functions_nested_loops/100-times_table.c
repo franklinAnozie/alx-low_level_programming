@@ -22,7 +22,7 @@ printf("%-d,   ", k);
 }
 else if ((k >= 100 && k <= 1000) || j >= 10)
 {
-printf("%2d,", k);
+printf("%-3d,", k);
 }
 else
 {
