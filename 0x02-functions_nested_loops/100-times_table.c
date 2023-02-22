@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * print_times_table - prints all possible combinations of two two-digit numbers
+ * print_times_table - prints times table
  * @n: condition number
  * Return: 0 (Success)
  */
@@ -16,7 +16,14 @@ for (j = 0; j < n + 1; j++)
 k = i * j;
 if (j < n)
 {
+if (k < 0)
+{
+printf("%d, ", k);
+}
+else
+{
 printf("%-3d,   ", k);
+}
 }
 else
 {
