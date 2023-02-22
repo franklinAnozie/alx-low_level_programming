@@ -16,7 +16,7 @@ for (j = 0; j < n + 1; j++)
 k = i * j;
 if (j < n)
 {
-if (k < 0)
+if (k < 100)
 {
 printf("%d, ", k);
 }
