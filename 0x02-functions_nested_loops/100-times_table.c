@@ -20,9 +20,9 @@ if (j < 10)
 {
 printf("%-d,   ", k);
 }
-else if (j >= 10 && k <= 100)
+else if (j >= 10 && j <= 100)
 {
-printf("%-2d,  ", k);
+printf("%-d,", k);
 }
 else
 {
