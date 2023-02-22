@@ -22,7 +22,7 @@ printf("%-d,   ", k);
 }
 else if (k >= 100 && k <= 1000)
 {
-printf("%-d,  ", k);
+printf("%-2d,  ", k);
 }
 else
 {
