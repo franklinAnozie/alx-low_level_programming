@@ -18,7 +18,7 @@ if (j < n)
 {
 if (k < 100)
 {
-printf("%d,  ", k);
+printf("%d,   ", k);
 }
 else
 {
