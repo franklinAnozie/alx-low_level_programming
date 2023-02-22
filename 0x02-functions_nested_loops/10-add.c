@@ -1,5 +1,5 @@
 /**
- * print_last_digit - prints all possible combinations of two two-digit numbers
+ * add - prints all possible combinations of two two-digit numbers
  * @i: first digit
  * @j: second digit
  * Return: 0 (Success)

@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * print_last_digit - prints all possible combinations of two two-digit numbers
+ * print_to_98 - prints all possible combinations of two two-digit numbers
  * @n: condition number
  * Return: 0 (Success)
  */
@@ -10,10 +10,10 @@ if (n < 98)
 {
 while (n <= 98)
 {
-printf ("%d", n);
+printf("%d", n);
 if (n != 98)
 {
-printf (", ");
+printf(", ");
 };
 n++;
 };
@@ -22,16 +22,16 @@ else
 {
 while (n >= 98)
 {
-printf ("%d", n);
+printf("%d", n);
 if (n != 98)
 {
-printf (", ");
+printf(", ");
 };
 n--;
 };
 }
 
-printf ("\n");
+printf("\n");
 
 return;
 }
