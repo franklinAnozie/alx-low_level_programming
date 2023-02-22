@@ -1,29 +1,49 @@
-#include <stdio.h>
+#include "main.h"
 /**
- * print_to_98 - prints all possible combinations of two two-digit numbers
- * @n: condition number
- * Return: 0 (Success)
+ * print_times_table - prints the n times table, starting with 0
+ * @n: number of the times table
  */
 void print_times_table(int n)
 {
-if ((n > 0 && n < 16) || n == 0)
-{
 int i, j, k;
-for (i = 0; i < n+1; i++)
+
+if (n >= 0 && n <= 15)
 {
-for (j = 0; j < n+1; j++)
+for (i = 0; i <= n; i++)
 {
-k = i * j;
-if (j < n)
+for (j = 0; j <= n; j++)
 {
-printf("%3d, ", k);
+k = j * i;
+if (j == 0)
+{
+_putchar(k + '0');
 }
-else
+else if (k < 10 && j != 0)
 {
-printf("%3d", k);
+_putchar(',');
+_putchar(' ');
+_putchar(' ');
+_putchar(' ');
+_putchar(k + '0');
+}
+else if (k >= 10 && k < 100)
+{
+_putchar(',');
+_putchar(' ');
+_putchar(' ');
+_putchar((k / 10) + '0');
+_putchar((k % 10) + '0');
+}
+else if (k >= 100)
+{
+_putchar(',');
+_putchar(' ');
+_putchar((k / 100) + '0');
+_putchar(((k / 10) % 10) + '0');
+_putchar((k % 10) + '0');
 }
 }
-printf("\n");
+_putchar('\n');
 }
 }
 }
