@@ -16,13 +16,13 @@ for (j = 0; j < n + 1; j++)
 k = i * j;
 if (j < n)
 {
-if (k < 100)
+if (j < 10)
 {
 printf("%-d,   ", k);
 }
-else if ((k >= 100 && k <= 1000) || j >= 10)
+else if (j >= 10 && k <= 100)
 {
-printf("%-3d,", k);
+printf("%-2d,  ", k);
 }
 else
 {
