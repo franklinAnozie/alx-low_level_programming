@@ -1,11 +1,12 @@
 #include <stdio.h>
 
 /**
- * fizzBuzz - prints all numbers between 1 and 100
+ * main - runs fizzBuzz
+ *
  * Return: 0
  **/
 
-void fizzBuzz(void)
+int main(void)
 {
 int i;
 
@@ -28,4 +29,6 @@ else
 printf("%d ", i);
 };
 };
+
+return (0);
 }
