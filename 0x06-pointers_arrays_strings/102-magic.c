@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+/**
+ * main - prints upper case characters
+ *
+ * Return: 0
+ **/
+
 int main(void)
 {
 int n;
