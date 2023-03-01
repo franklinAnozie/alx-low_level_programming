@@ -25,16 +25,13 @@ for (j = 0; j < 27; j++)
 if (text[i] == ALPHABETS[j])
 {
 k = alphabets[j];
+text[i] = k;
 }
-else if (text[i] == alphabets[j])
+if (text[i] == alphabets[j])
 {
 k = ALPHABETS[j];
-}
-else
-{
-k = text[i];
-}
 text[i] = k;
+}
 }
 }
 
