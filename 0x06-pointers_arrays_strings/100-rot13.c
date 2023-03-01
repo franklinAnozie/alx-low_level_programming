@@ -27,7 +27,7 @@ if (text[i] == ALPHABETS[j])
 k = alphabets[j];
 text[i] = k;
 }
-if (text[i] == alphabets[j])
+else
 {
 k = ALPHABETS[j];
 text[i] = k;
