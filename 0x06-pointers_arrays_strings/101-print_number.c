@@ -1,26 +1,25 @@
 #include "main.h"
-/**
- *print_number - updates the value of the variable
- * the pointer points to 98
- * @n: pointer to the variable to update
- *
- * Return: pointer to the updated variable
- */
 
+/**
+ * print_number - prints an integer;
+ * @n: integer to be printed;
+ */
 void print_number(int n)
 {
+unsigned int n1;
+
 if (n < 0)
 {
+n1 = -n;
 _putchar('-');
-n = -n;
-}
-if (n >= 0 && n <= 9)
-{
-_putchar((n % 10) + '0');
 }
 else
 {
-print_number(n / 10);
-_putchar((n % 10) + '0');
+n1 = n;
 }
+
+if (n1 / 10)
+print_number(n1 / 10);
+
+_putchar((n1 % 10) + '0');
 }

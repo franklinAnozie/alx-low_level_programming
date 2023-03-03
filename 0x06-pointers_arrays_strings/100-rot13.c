@@ -1,39 +1,29 @@
-#include <stdio.h>
+#include "main.h"
+
 /**
- *rot13 - updates the value of the variable
- * the pointer points to 98
- * @text: pointer to the variable to update
+ * rot13 - encodes a string in rot13
+ * @s: string to be encoded
  *
- * Return: pointer to the updated variable
+ * Return: the resulting string
  */
+char *rot13(char *s)
+{
+int i, j;
 
-char *rot13(char *text)
-{
-char ALPHABETS[27] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-'i', 'j', 'k', 'l', 'm', 'A', 'B', 'C', 'D', 'E', 'F', 'G',
-'H', 'I', 'J', 'K', 'L', 'M' };
-char alphabets[27] = { 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
-'v', 'w', 'x', 'y', 'z', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
-'U', 'V', 'W', 'X', 'Y', 'Z' };
+char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-int i, j, k;
-
-for (i = 0; text[i] != '\0'; i++)
+for (i = 0; s[i] != '\0'; i++)
 {
-for (j = 0; j < 27; j++)
+for (j = 0; a[j] != '\0'; j++)
 {
-if (text[i] == ALPHABETS[j])
+if (s[i] == a[j])
 {
-k = alphabets[j];
-text[i] = k;
-}
-else
-{
-k = ALPHABETS[j];
-text[i] = k;
+s[i] = b[j];
+break;
 }
 }
 }
 
-return (text);
+return (s);
 }
