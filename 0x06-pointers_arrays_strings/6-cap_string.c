@@ -1,50 +1,34 @@
+#include "main.h"
+
 /**
- *cap_string - updates the value of the variable
- * the pointer points to 98
- * @word: pointer to the variable to update
+ * cap_string - capitalizes everey word of a string
+ * @s: string to modify
  *
- * Return: pointer to the updated variable
+ * Return: the resulting string
  */
+char *cap_string(char *s)
+{
+int i, j;
 
-char *cap_string(char *word)
-{
-char LOWERCASE[27] = {'a', 'b', 'c', 'd', 'e', 'f', 'g',
-'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
-'s', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-char UPPERCASE[27] = {'A', 'B', 'C', 'D', 'E', 'F', 'G',
-'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
-'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
-char separators[] = {' ', '\t', '\n', ',', ';', '.', '!', '?',
-'"', '(', ')', '{', '}' };
+char spe[13] = {' ', '\t', '\n', ',', ';', '.',
+'!', '?', '"', '(', ')', '{', '}'};
 
-int specificCharacter, wordLength, specificSeparator, separatorLength, i;
-for (wordLength = 0; word[wordLength] != '\0'; )
+for (i = 0; s[i] != '\0'; i++)
 {
-wordLength++;
-}
-for (separatorLength = 0; separators[separatorLength] != '\0'; )
+if (i == 0 && s[i] >= 'a' && s[i] <= 'z')
+s[i] -= 32;
+
+for (j = 0; j < 13; j++)
 {
-separatorLength++;
-}
-for (specificCharacter = 0;
-specificCharacter < wordLength;
-specificCharacter++)
+if (s[i] == spe[j])
 {
-for (specificSeparator = 0;
-specificSeparator < separatorLength;
-specificSeparator++)
+if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
 {
-if (word[specificCharacter] == separators[specificSeparator])
-{
-for (i = 0; i < 27; i++)
-{
-if (word[specificCharacter + 1] == LOWERCASE[i])
-{
-word[specificCharacter + 1] = UPPERCASE[i];
+s[i + 1] -= 32;
 }
 }
 }
 }
-}
-return (word);
+
+return (s);
 }
