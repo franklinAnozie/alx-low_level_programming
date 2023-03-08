@@ -13,7 +13,7 @@ return (_sqrt(n, 1));
 }
 
 /**
- * _sqrt_ - recurses to find the natural
+ * _sqrt - recurses to find the natural
  * square root of a number
  * @x: number to calculate the sqaure root of
  * @y: iterator
