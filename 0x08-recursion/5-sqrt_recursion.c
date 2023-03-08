@@ -33,5 +33,5 @@ if (z < 0)
 {
 return (-1);
 }
-return (1 + _sqrt(z, x + 2));
+return (1 + _sqrt(z, y + 2));
 }
