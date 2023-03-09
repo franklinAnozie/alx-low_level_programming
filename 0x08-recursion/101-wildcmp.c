@@ -3,8 +3,8 @@
 /**
  * wildcmp - is a fuction that compares two strings.
  *
- * @s1: is a pointer to char.
- * @s2: is a pointer to char.
+ *@s1: is a pointer to char.
+ *@s2: is a pointer to char.
  *
  * Return: Returns the transformed pointer.
  **/
