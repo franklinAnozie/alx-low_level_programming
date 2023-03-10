@@ -32,8 +32,8 @@ return (1);
 }
 }
 printf("%d\n", sum);
-return (0);
 }
+return (0);
 }
 
 /**
@@ -55,9 +55,6 @@ if (s[j] >= '0' && s[j] <= '9')
 {
 return (1);
 }
-else
-{
+}
 return (0);
-}
-}
 }
