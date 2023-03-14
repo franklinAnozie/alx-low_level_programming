@@ -30,6 +30,10 @@ char *_strdup(char *str)
 
 	for (j = 0; j < i; j++)
 	{
+		if (new_str == NULL)
+		{
+			return (NULL);
+		}
 		new_str[j] = str[j];
 	}
 
