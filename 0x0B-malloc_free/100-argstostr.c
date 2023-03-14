@@ -1,10 +1,25 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/**
+*** argstostr - concatenates the strings *****
+*** given to the function as arguments *******
+*** @ac: the number of strings given *********
+*** @av: the strings to be concatenated ******
+*** Description: concatenates strings given **
+*** Return: pointer to the concatenated ******
+*** string ***********************************
+**/
+
 char *argstostr(int ac, char **av)
 {
 	int i, j, k, l, m = 0, length;
 	char *array_string;
+
+	if (ac == NULL || av == NULL)
+	{
+		return (NULL);
+	}
 
 	for (i = 0; i < ac; i++)
 	{
@@ -14,7 +29,7 @@ char *argstostr(int ac, char **av)
 		}
 	}
 
-	array_string = (char *)malloc(sizeof(char) * (length + 1));
+	array_string = (char *)malloc(sizeof(char) * length + 1);
 
 	if (array_string == NULL)
 	{
