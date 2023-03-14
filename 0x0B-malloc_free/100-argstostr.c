@@ -13,7 +13,7 @@
 
 char *argstostr(int ac, char **av)
 {
-	int i, j, k, l, m = 0, length;
+	int i, j, k, l, m = 0, length = 0;
 	char *array_string;
 
 	if (av == NULL)
@@ -27,9 +27,10 @@ char *argstostr(int ac, char **av)
 		{
 			length++;
 		}
+		length++;
 	}
 
-	array_string = (char *)malloc(sizeof(char) * length);
+	array_string = (char *)malloc(sizeof(char) * length + 1);
 
 	if (array_string == NULL)
 	{
