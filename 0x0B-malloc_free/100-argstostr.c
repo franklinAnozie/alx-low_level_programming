@@ -16,7 +16,7 @@ char *argstostr(int ac, char **av)
 	int i, j, k, l, m = 0, length;
 	char *array_string;
 
-	if (ac == NULL || av == NULL)
+	if (av == NULL)
 	{
 		return (NULL);
 	}
