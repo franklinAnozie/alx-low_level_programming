@@ -34,10 +34,15 @@ char *str_concat(char *s1, char *s2)
 		j++;
 	}
 
-	new_str = malloc(sizeof(char) * (i + j + 1));
+	new_str = malloc(sizeof(char) * (i + j));
 
 	for (k = 0; k <= i; k++)
 	{
+		if (new_str == NULL)
+		{
+			return (NULL);
+		}
+		new_str[k] = s1[k];
 		if (s1[k] == '\0')
 		{
 			for (l = 0; l < j; l++)
@@ -46,7 +51,6 @@ char *str_concat(char *s1, char *s2)
 				k++;
 			}
 		}
-		new_str[k] = s1[k];
 	}
 	new_str[k + 1] = '\0';
 
