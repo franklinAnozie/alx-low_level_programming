@@ -26,7 +26,7 @@ char **strtow(char *str)
 		if (str[c] != ' ' && (str[c + 1] == ' ' || str[c + 1] == '\0'))
 			l++;
 
-	strn = (char **)malloc(sizeof(char *) * (l));
+	strn = (char **)malloc(sizeof(char *) * (l + 1));
 
 	if (strn == NULL)
 	{
