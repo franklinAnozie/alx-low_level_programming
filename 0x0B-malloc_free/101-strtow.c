@@ -20,6 +20,7 @@ char **strtow(char *str)
 
 	if (str == NULL)
 	{
+		free(str);
 		return (NULL);
 	}
 
@@ -27,6 +28,7 @@ char **strtow(char *str)
 
 	if (new_str == NULL)
 	{
+		free(new_str);
 		return (NULL);
 	}
 
@@ -122,6 +124,7 @@ char *return_new_str(char *str)
 
 	if (new_str == NULL || *new_str == '\0')
 	{
+		free(new_str);
 		return (NULL);
 	}
 
@@ -152,6 +155,7 @@ int return_new_str_length(char *str)
 
 	if (new_str == NULL)
 	{
+		free(new_str);
 		return (0);
 	}
 
