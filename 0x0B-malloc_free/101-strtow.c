@@ -18,16 +18,21 @@ char **strtow(char *str)
 	int l, m, n, o = 0, p;
 	char **strn, *new_str;
 
-	if (str == NULL || *str == ' ')
+	if (str == NULL)
 	{
 		return (NULL);
 	}
 
 	new_str = return_new_str(str);
 
+	if (new_str == NULL)
+	{
+		return (NULL);
+	}
+
 	l = return_new_str_length(str);
 
-	strn = (char **)malloc(sizeof(char *) * l);
+	strn = (char **)malloc(sizeof(char *) * l + 1);
 
 	if (strn == NULL)
 	{
@@ -79,14 +84,14 @@ char *return_new_str(char *str)
 	char *new_str;
 	int i, j, k = 0, l = 0;
 
-	if (str == NULL)
-	{
-		return (NULL);
-	}
-
 	for (i = 0; str[i] != '\0';)
 	{
 		i++;
+	}
+
+	if (i < 2)
+	{
+		return (NULL);
 	}
 
 	new_str = (char *)malloc(sizeof(char) * i + 1);
