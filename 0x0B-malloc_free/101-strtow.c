@@ -53,7 +53,7 @@ char **strtow(char *str)
 
 			if (new_str[n] != ' ' && (new_str[n + 1] == ' ' || new_str[n + 1] == '\0'))
 			{
-				strn[m] = (char *)malloc(sizeof(char) * (n - m + 5));
+				strn[m] = (char *)malloc(sizeof(char) * (m - n + 5));
 				if (strn[m] == NULL)
 				{
 					free(strn[m]);
