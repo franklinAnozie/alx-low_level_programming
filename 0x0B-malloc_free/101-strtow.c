@@ -18,7 +18,7 @@ char **strtow(char *str)
 	int l, m, n, o = 0, p;
 	char **strn, *new_str;
 
-	if (str == NULL || str == ' ')
+	if (str == NULL)
 	{
 		return NULL;
 	}
