@@ -63,5 +63,11 @@ char **strtow(char *str)
 		strn[m][p] = '\0';
 	}
 	strn[m] = NULL;
+
+	if (strn == '\0')
+	{
+		return (strn);
+	}
+
 	return (strn);
 }
