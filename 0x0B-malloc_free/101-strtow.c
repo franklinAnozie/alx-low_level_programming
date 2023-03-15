@@ -84,7 +84,7 @@ char **strtow(char *str)
 char *return_new_str(char *str)
 {
 	char *new_str;
-	int i, j, k = 0, l = 1;
+	int i, j, k = 0, l = 0;
 
 	for (i = 0; str[i] != '\0';)
 	{
@@ -141,7 +141,7 @@ char *return_new_str(char *str)
 int return_new_str_length(char *str)
 {
 	char *new_str;
-	int i, j, k = 0, l = 1;
+	int i, j, k = 0, l = 0;
 
 	for (i = 0; str[i] != '\0';)
 	{
