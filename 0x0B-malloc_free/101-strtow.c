@@ -99,14 +99,6 @@ char *return_new_str(char *str)
 		return (NULL);
 	}
 
-	new_str = (char *)malloc(sizeof(char) * i + 1);
-
-	if (new_str == NULL)
-	{
-		free(new_str);
-		return (NULL);
-	}
-
 	for (j = 0; j < i; j++)
 	{
 		if (str[j] != ' ')
@@ -125,7 +117,6 @@ char *return_new_str(char *str)
 
 	if (new_str == NULL || *new_str == '\0')
 	{
-		free(new_str);
 		return (NULL);
 	}
 
