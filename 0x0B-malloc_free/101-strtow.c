@@ -32,7 +32,7 @@ char **strtow(char *str)
 
 	l = return_new_str_length(str);
 
-	strn = (char **)malloc(sizeof(char *) * l + 1);
+	strn = (char **)malloc(sizeof(char *) * (l));
 
 	if (strn == NULL)
 	{
