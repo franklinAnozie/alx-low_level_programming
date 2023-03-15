@@ -15,7 +15,7 @@ char *return_new_str(char *str);
 
 char **strtow(char *str)
 {
-	int l, m, n, o = 0, p;
+	int c, l, m, n, o = 0, p;
 	char **strn, *new_str;
 
 	if (str == NULL)
@@ -32,7 +32,9 @@ char **strtow(char *str)
 		return (NULL);
 	}
 
-	l = return_new_str_length(str);
+	for (c = l = 0; str[c] != '\0'; c++)
+		if (str[c] != ' ' && (str[c + 1] == ' ' || str[c + 1] == '\0'))
+			l++;
 
 	strn = (char **)malloc(sizeof(char *) * (l));
 
@@ -53,7 +55,7 @@ char **strtow(char *str)
 
 			if (new_str[n] != ' ' && (new_str[n + 1] == ' ' || new_str[n + 1] == '\0'))
 			{
-				strn[m] = (char *)malloc(sizeof(char) * (o - n + 2));
+				strn[m] = (char *)malloc(sizeof(char) * (n - o + 2));
 				if (strn[m] == NULL)
 				{
 					free(strn[m]);
