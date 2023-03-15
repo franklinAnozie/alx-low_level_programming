@@ -117,6 +117,11 @@ char *return_new_str(char *str)
 	}
 	new_str[k] = '\0';
 
+	if (new_str == NULL || *new_str == '\0')
+	{
+		return (NULL);
+	}
+
 	return (new_str);
 }
 
