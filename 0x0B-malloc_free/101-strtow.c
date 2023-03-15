@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int return_new_str_length(char *str);
 char *return_new_str(char *str);
 
 /**
@@ -131,51 +130,4 @@ char *return_new_str(char *str)
 	}
 
 	return (new_str);
-}
-
-/**
-*** return_new_str_length - calculates the ***
-*** length of the string given to the ********
-*** function as arguments ********************
-*** @str: the string given *******************
-*** Description: calculates length of the ****
-*** strings given ****************************
-*** Return: length of string *****************
-**/
-
-int return_new_str_length(char *str)
-{
-	char *new_str;
-	int i, j, k = 0, l = 0;
-
-	for (i = 0; str[i] != '\0';)
-	{
-		i++;
-	}
-
-	new_str = (char *)malloc(sizeof(char) * i + 1);
-
-	if (new_str == NULL)
-	{
-		free(new_str);
-		return (0);
-	}
-
-	for (j = 0; j < i; j++)
-	{
-		if (str[j] != ' ')
-		{
-			new_str[k] = str[j];
-			if (str[j + 1] == ' ' || str[j + 1] == '\0')
-			{
-				new_str[k + 1] = ' ';
-				k++;
-				l++;
-			}
-			k++;
-		}
-	}
-	new_str[k] = '\0';
-
-	return (l);
 }
