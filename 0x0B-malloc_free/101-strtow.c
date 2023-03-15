@@ -15,19 +15,10 @@ char *return_new_str(char *str);
 char **strtow(char *str)
 {
 	int c, l, m, n, o = 0, p;
-	char **strn, *new_str;
+	char **strn;
 
-	if (str == NULL)
+	if (str == NULL || *str == ' ')
 	{
-		free(str);
-		return (NULL);
-	}
-
-	new_str = return_new_str(str);
-
-	if (new_str == NULL)
-	{
-		free(new_str);
 		return (NULL);
 	}
 
@@ -45,14 +36,14 @@ char **strtow(char *str)
 
 	for (m = 0; m < l; m++)
 	{
-		for (n = o; new_str[n] != '\0'; n++)
+		for (n = o; str[n] != '\0'; n++)
 		{
-			if (new_str[n] == ' ')
+			if (str[n] == ' ')
 			{
 				o++;
 			}
 
-			if (new_str[n] != ' ' && (new_str[n + 1] == ' ' || new_str[n + 1] == '\0'))
+			if (str[n] != ' ' && (str[n + 1] == ' ' || str[n + 1] == '\0'))
 			{
 				strn[m] = (char *)malloc(sizeof(char) * (n - o + 2));
 				if (strn[m] == NULL)
@@ -65,7 +56,7 @@ char **strtow(char *str)
 		}
 		for (p = 0; o <= n;)
 		{
-			strn[m][p] = new_str[o];
+			strn[m][p] = str[o];
 			o++;
 			p++;
 		}
@@ -73,52 +64,4 @@ char **strtow(char *str)
 	}
 	strn[m] = NULL;
 	return (strn);
-}
-
-/**
-*** return_new_str - creates new string ******
-*** from the string given to the function as *
-*** an argument ******************************
-*** @str: the strings given ******************
-*** Description: creates new string **********
-*** Return: pointer to the new string ********
-**/
-
-char *return_new_str(char *str)
-{
-	char *new_str;
-	int i, j, k = 0, l = 0;
-
-	for (i = 0; str[i] != '\0';)
-	{
-		i++;
-	}
-
-	if (i < 2)
-	{
-		return (NULL);
-	}
-
-	for (j = 0; j < i; j++)
-	{
-		if (str[j] != ' ')
-		{
-			new_str[k] = str[j];
-			if (str[j + 1] == ' ' || str[j + 1] == '\0')
-			{
-				new_str[k + 1] = ' ';
-				k++;
-				l++;
-			}
-			k++;
-		}
-	}
-	new_str[k] = '\0';
-
-	if (new_str == NULL || *new_str == '\0')
-	{
-		return (NULL);
-	}
-
-	return (new_str);
 }
