@@ -36,6 +36,7 @@ char **strtow(char *str)
 
 	if (strn == NULL)
 	{
+		free(strn);
 		return (NULL);
 	}
 
@@ -53,6 +54,7 @@ char **strtow(char *str)
 				strn[m] = (char *)malloc(sizeof(char) * (n - o + 2));
 				if (strn[m] == NULL)
 				{
+					free(strn[m]);
 					return (NULL);
 				}
 				break;
@@ -98,6 +100,7 @@ char *return_new_str(char *str)
 
 	if (new_str == NULL)
 	{
+		free(new_str);
 		return (NULL);
 	}
 
@@ -146,6 +149,11 @@ int return_new_str_length(char *str)
 	}
 
 	new_str = (char *)malloc(sizeof(char) * i + 1);
+
+	if (new_str == NULL)
+	{
+		return (0);
+	}
 
 	for (j = 0; j < i; j++)
 	{
