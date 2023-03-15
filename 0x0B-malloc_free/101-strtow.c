@@ -23,8 +23,17 @@ char **strtow(char *str)
 	}
 
 	for (c = l = 0; str[c] != '\0'; c++)
+	{
 		if (str[c] != ' ' && (str[c + 1] == ' ' || str[c + 1] == '\0'))
+		{
 			l++;
+		}
+	}
+
+	if (l < 2)
+	{
+		return (NULL);
+	}
 
 	strn = (char **)malloc(sizeof(char *) * (l + 1));
 
@@ -63,11 +72,6 @@ char **strtow(char *str)
 		strn[m][p] = '\0';
 	}
 	strn[m] = NULL;
-
-	if (strn == '\0')
-	{
-		return (strn);
-	}
 
 	return (strn);
 }
