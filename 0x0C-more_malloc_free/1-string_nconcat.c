@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
 *** string_nconcat - concatenates two strings **
@@ -35,7 +36,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	else
 		new_strn = malloc(sizeof(char) * (count_s1 + n + 1));
 
-	if (new_strn == NULL)
+	printf("n: %d\n", n);
+	printf("c1: %d\n", count_s1);
+	printf("c2: %d\n", count_s2);
+	if (!new_strn)
 		return (NULL);
 
 	for (i = 0; i < count_s1; i++)
