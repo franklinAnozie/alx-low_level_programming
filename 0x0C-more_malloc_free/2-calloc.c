@@ -1,11 +1,11 @@
 #include <stdlib.h>
 
-char *_memset(char *, char, unsigned int);
+char *mem(char *, char, unsigned int);
 
 /**
 *** _calloc - allocates memory for an array **
 *** @nmemb: number of elements of the array **
-*** @size: bytes of elecments of the array ***
+*** @size: bytes of elements of the array ****
 *** Description: the function allocates ******
 *** memory of size bytes for an array ********
 *** Return: pointer to created memory ********
@@ -33,22 +33,21 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 }
 
 /**
- * *_memset - fills memory with a constant byte
- * @s: memory area to be filled
- * @b: char to copy
- * @n: number of times to copy b
- *
- * Return: pointer to the memory area s
- */
+*** mem - copy a character into an array *****
+*** @mem: array to be filled with character **
+*** @c: character to be copied ***************
+*** @a: number of times to copy character ****
+*** Return: pointer to array created *********
+**/
 
-char *_memset(char *s, char b, unsigned int n)
+char *mem(char *mem, char c, unsigned int a)
 {
 	unsigned int i;
 
-	for (i = 0; i < n; i++)
+	for (i = 0; i < a; i++)
 	{
-		s[i] = b;
+		mem[i] = c;
 	}
 
-	return (s);
+	return (mem);
 }
