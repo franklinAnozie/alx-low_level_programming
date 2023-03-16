@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-char *mem(char *, char, unsigned int);
+char *new_mem(char *, char, unsigned int);
 
 /**
 *** _calloc - allocates memory for an array **
@@ -27,20 +27,20 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 	}
 
-	_memset(mem, 0, nmemb * size);
+	new_mem(mem, 0, nmemb * size);
 
 	return (mem);
 }
 
 /**
-*** mem - copy a character into an array *****
-*** @mem: array to be filled with character **
-*** @c: character to be copied ***************
-*** @a: number of times to copy character ****
-*** Return: pointer to array created *********
+*** new_mem - copy a character into an array **
+*** @mem: array to be filled with character ***
+*** @c: character to be copied ****************
+*** @a: number of times to copy character *****
+*** Return: pointer to array created **********
 **/
 
-char *mem(char *mem, char c, unsigned int a)
+char *new_mem(char *mem, char c, unsigned int a)
 {
 	unsigned int i;
 
