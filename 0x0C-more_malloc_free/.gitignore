@@ -5,3 +5,5 @@ test
 main.o
 test.o
 _putchar.c
+1-string_nconcat1.c
+101-mul1.c

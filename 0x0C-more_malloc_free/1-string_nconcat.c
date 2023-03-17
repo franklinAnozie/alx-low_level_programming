@@ -1,58 +1,45 @@
 #include <stdlib.h>
-#include <stdio.h>
+#include "main.h"
 
 /**
-*** string_nconcat - concatenates two strings **
-*** @s1: string to be concatenated into ********
-*** @s2: string to concatenate into ************
-*** @n: number of bytes to concatenate *********
-*** Description: the function concatenames n ***
-*** bytes of s2 into s1 ************************
-*** Return: pointer to concatenated string *****
-**/
-
+ * *string_nconcat - concatenates n bytes of a string to another string
+ * @s1: string to append to
+ * @s2: string to concatenate from
+ * @n: number of bytes from s2 to concatenate to s1
+ *
+ * Return: pointer to the resulting string
+ */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *new_strn;
-	unsigned int count_s1, count_s2, i, j;
+	char *s;
+	unsigned int i = 0, j = 0, len1 = 0, len2 = 0;
 
-	if (s1 == NULL)
-		s1 = "";
+	while (s1 && s1[len1])
+		len1++;
+	while (s2 && s2[len2])
+		len2++;
 
-	if (s2 == NULL)
-		s2 = "";
-
-	for (count_s1 = 0; s1[count_s1] != '\0';)
-		count_s1++;
-
-	for (count_s2 = 0; s2[count_s2] != '\0';)
-		count_s2++;
-
-	if (n >= count_s2)
-	{
-		new_strn = malloc(sizeof(char) * (count_s1 + count_s2 + 1));
-		n = count_s2;
-	}
+	if (n < len2)
+		s = malloc(sizeof(char) * (len1 + n + 1));
 	else
-		new_strn = malloc(sizeof(char) * (count_s1 + n + 1));
+		s = malloc(sizeof(char) * (len1 + len2 + 1));
 
-	printf("n: %d\n", n);
-	printf("c1: %d\n", count_s1);
-	printf("c2: %d\n", count_s2);
-	if (!new_strn)
+	if (!s)
 		return (NULL);
 
-	for (i = 0; i < count_s1; i++)
-		new_strn[i] = s1[i];
+	while (i < len1)
+	{
+		s[i] = s1[i];
+		i++;
+	}
 
-	for (; i == count_s1; i++)
-		if (s1[i] == '\0')
-			for (j = 0; s2[j] != '\0' && j < n; j++)
-			{
-				new_strn[i] = s2[j];
-				i++;
-			}
-	new_strn[i] = '\0';
+	while (n < len2 && i < (len1 + n))
+		s[i++] = s2[j++];
 
-	return (new_strn);
+	while (n >= len2 && i < (len1 + len2))
+		s[i++] = s2[j++];
+
+	s[i] = '\0';
+
+	return (s);
 }
