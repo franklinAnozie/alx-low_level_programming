@@ -4,19 +4,6 @@
 #include <stdlib.h>
 
 /**
- * str_len - finds string length
- * @str: input pointer to string
- * Return: length of string
- */
-int str_len(char *str)
-{
-	int len;
-
-	for (len = 0; *str != '\0'; len++)
-		len++, str++;
-	return (len / 2);
-}
-/**
  * _calloc - allocates memory for an array using malloc
  * @bytes: bytes of memory needed per size requested
  * @size: size in bytes of each element
@@ -58,18 +45,7 @@ void add_arrays(int *mul_result, int *sum_result, int len_r)
 		len_r2--;
 	}
 }
-/**
- * is_digit - checks for digits
- * @c: input character to check for digit
- * Return: 0 failure, 1 success
- */
-int is_digit(char c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	printf("Error\n");
-	return (0);
-}
+
 /**
  * multiply - multiplies 2 #'s, prints result, must be 2 #'s
  * @num1: factor # 1 (is the smaller of 2 numbers)
@@ -89,12 +65,12 @@ int *multiply(char *num1, int len_1, char *num2, int len_2, int len_r)
 	{
 		mul_result = _calloc(sizeof(int), len_r);
 		i2 = len_2 - 1, digit = (len_r - 1 - i);
-		if (!is_digit(num1[i1]))
+		if (!num2[i1] >= '0' && num2[i1] <= '9')
 			return (NULL);
 		carry = 0;
 		while (i2 >= 0)
 		{
-			if (!is_digit(num2[i2]))
+			if (!num2[i2] >= '0' && num2[i2] <= '9')
 				return (NULL);
 			product = (num1[i1] - '0') * (num2[i2] - '0');
 			product += carry;
@@ -142,7 +118,15 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(98);
 	}
-	len_1 = str_len(argv[1]), len_2 = str_len(argv[2]);
+	for (len_1 = 0; argv[1] != '\0';)
+	{
+		len_1++;
+	}
+	for (len_2 = 0; argv[1] != '\0';)
+	{
+		len_2++;
+	}
+	len_1 /= len_1, len_2 /= len_2;
 	len_r = len_1 + len_2;
 	if (len_1 < len_2)
 		num1 = argv[1], num2 = argv[2];
