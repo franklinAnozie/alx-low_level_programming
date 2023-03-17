@@ -65,12 +65,12 @@ int *multiply(char *num1, int len_1, char *num2, int len_2, int len_r)
 	{
 		mul_result = _calloc(sizeof(int), len_r);
 		i2 = len_2 - 1, digit = (len_r - 1 - i);
-		if (!num2[i1] >= '0' && num2[i1] <= '9')
+		if (!(num2[i1] >= '0' && num2[i1] <= '9'))
 			return (NULL);
 		carry = 0;
 		while (i2 >= 0)
 		{
-			if (!num2[i2] >= '0' && num2[i2] <= '9')
+			if (!(num2[i2] >= '0' && num2[i2] <= '9'))
 				return (NULL);
 			product = (num1[i1] - '0') * (num2[i2] - '0');
 			product += carry;
@@ -118,11 +118,11 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(98);
 	}
-	for (len_1 = 0; argv[1] != '\0';)
+	for (len_1 = 0; *argv[1] != '\0';)
 	{
 		len_1++;
 	}
-	for (len_2 = 0; argv[1] != '\0';)
+	for (len_2 = 0; *argv[2] != '\0';)
 	{
 		len_2++;
 	}
