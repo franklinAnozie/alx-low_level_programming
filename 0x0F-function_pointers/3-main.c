@@ -21,7 +21,8 @@ int main(int argc, char **argv)
 	}
 
 	if (*argv[2] != '/' && *argv[2] != '%'
-	&& *argv[2] != '*' && *argv[2] != '-' && *argv[2] != '+')
+	&& *argv[2] != '*' && *argv[2] != '-'
+	&& *argv[2] != '+' || strlen(*argv[2] != 1))
 	{
 		printf("Error\n");
 		exit(98);
