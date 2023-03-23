@@ -5,3 +5,4 @@ test.c
 test.o
 test
 _putchar.c
+calc
