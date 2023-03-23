@@ -2,6 +2,14 @@
 #include <stdlib.h>
 #include "3-calc.h"
 
+/**
+*** main - Prints the result of mathematical ******
+*** operation passed as arguments to the function *
+*** @argc: Number of arguments passed *************
+*** @argv: Arguments passed including func name ***
+*** Return: Return result from the function *******
+**/
+
 int main(int argc, char **argv)
 {
 	int first_variable, second_variable, result;
@@ -28,11 +36,6 @@ int main(int argc, char **argv)
 	second_variable = atoi(argv[3]);
 
 	result = get_op_func(argv[2])(first_variable, second_variable);
-	if (!result)
-	{
-		printf("Error3\n");
-		exit(98);
-	}
 
 	printf("%d\n", result);
 
