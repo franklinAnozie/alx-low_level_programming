@@ -47,7 +47,7 @@ int op_div(int a, int b)
 }
 
 /**
-*** op_add - gets the remainder of the division **
+*** op_mod - gets the remainder of the division **
 *** of two integers ******************************
 *** @a: first integer ****************************
 *** @b: second integer ***************************

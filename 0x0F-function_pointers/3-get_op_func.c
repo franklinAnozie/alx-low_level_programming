@@ -21,11 +21,11 @@ int (*get_op_func(char *s))(int a, int b)
 		{"%", op_mod},
 		{NULL, NULL}};
 
-	while (operators[i].operator!= NULL)
+	while (operators[i].operator != NULL)
 	{
 		printf("%c\n", *operators[i].operator);
 		printf("%c\n", *s);
-		if (*operators[i].operator== * s)
+		if (*operators[i].operator == *s)
 		{
 			return (operators[i].func);
 		}

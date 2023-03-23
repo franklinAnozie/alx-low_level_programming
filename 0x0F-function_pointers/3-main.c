@@ -20,13 +20,15 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	if (*argv[2] != '/' && *argv[2] != '%' && *argv[2] != '*' && *argv[2] != '-' && *argv[2] != '+')
+	if (*argv[2] != '/' && *argv[2] != '%'
+	&& *argv[2] != '*' && *argv[2] != '-' && *argv[2] != '+')
 	{
 		printf("Error2\n");
 		exit(98);
 	}
 
-	if ((*argv[2] == '/' || *argv[2] == '%') && (*argv[1] == '0' || *argv[3] == '0'))
+	if ((*argv[2] == '/' || *argv[2] == '%')
+	&& (*argv[1] == '0' || *argv[3] == '0'))
 	{
 		printf("Error3\n");
 		exit(98);
