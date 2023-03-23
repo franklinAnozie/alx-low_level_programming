@@ -9,16 +9,16 @@ int op_mod(int a, int b);
 int (*get_op_func(char *s))(int, int);
 
 /**
-*** struct operator_type - a structure  ***********
-*** containing an opearator and a function to run *
-*** @operator: operator ***************************
-*** @func: function to be run *********************
+*** struct op - a structure containing an *********
+*** opearator and a function to run ***************
+*** @op: operator *********************************
+*** @f: function to be run ************************
 **/
 
-typedef struct operator_type
+typedef struct op
 {
-	char *operator;
-	int (*func)(int a, int b);
-} Operator_Type;
+	char *op;
+	int (*f)(int a, int b);
+} op_t;
 
 #endif

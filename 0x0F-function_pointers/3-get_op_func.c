@@ -13,7 +13,7 @@ int (*get_op_func(char *s))(int a, int b)
 {
 	int i = 0;
 
-	Operator_Type operators[] = {
+	op_t ops[] = {
 		{"+", op_add},
 		{"-", op_sub},
 		{"*", op_mul},
@@ -21,13 +21,11 @@ int (*get_op_func(char *s))(int a, int b)
 		{"%", op_mod},
 		{NULL, NULL}};
 
-	while (operators[i].operator != NULL)
+	while (ops[i].op != NULL)
 	{
-		printf("%c\n", *operators[i].operator);
-		printf("%c\n", *s);
-		if (*operators[i].operator == *s)
+		if (*ops[i].op == *s)
 		{
-			return (operators[i].func);
+			return (ops[i].f);
 		}
 		i++;
 	}
