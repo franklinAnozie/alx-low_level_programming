@@ -36,12 +36,12 @@ void print_all(const char *const format, ...)
 			{
 				printf("%s", separator);
 				characters[j].func(list);
+				separator = ", ";
 			}
 			j++;
 		}
 		i++;
 		j = 0;
-		separator = ", ";
 	}
 	printf("\n");
 
