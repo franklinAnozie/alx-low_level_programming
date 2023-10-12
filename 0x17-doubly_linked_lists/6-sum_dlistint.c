@@ -1,4 +1,4 @@
-#include "list.h"
+#include "lists.h"
 
 /**
  * sum_dnodeint - sums the nodes in a doubly linked list
