@@ -7,7 +7,7 @@
  * Return: sum of nodes or 0 if theres no node
  */
 
-dlistint_t *sum_dnodeint(dlistint_t *head)
+int sum_dlistint(dlistint_t *head)
 {
 	dlistint_t *point;
 	int sum = 0;
