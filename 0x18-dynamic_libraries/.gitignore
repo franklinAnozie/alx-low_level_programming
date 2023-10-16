@@ -1,0 +1,13 @@
+func.c
+func.o
+add.c
+mul.c
+mod.c
+sub.c
+div.c
+add.o
+mul.o
+mod.o
+sub.o
+div.o
+main_copy.h
