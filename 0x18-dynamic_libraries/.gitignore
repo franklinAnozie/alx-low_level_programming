@@ -11,3 +11,4 @@ mod.o
 sub.o
 div.o
 main_copy.h
+gm
