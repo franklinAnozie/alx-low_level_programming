@@ -1,0 +1,6 @@
+main.c
+test.c
+test\
+test.o
+main.o
+main
