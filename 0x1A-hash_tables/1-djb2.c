@@ -12,11 +12,11 @@ unsigned long int hash_djb2(const unsigned char *str)
 	unsigned long int hash;
 	int c;
 
-    if (str == NULL)
-    {
-        fprintf(stderr, "hash_djb2 failed\n");
-        exit(EXIT_FAILURE);
-    }
+	if (str == NULL)
+	{
+		fprintf(stderr, "hash_djb2 failed\n");
+		exit(EXIT_FAILURE);
+	}
 	hash = 5381;
 	while ((c = *str++))
 	{

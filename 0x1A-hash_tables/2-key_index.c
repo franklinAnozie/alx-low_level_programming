@@ -10,20 +10,20 @@
 
 unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
-    unsigned long int hash;
-    unsigned long int key_index;
+	unsigned long int hash;
+	unsigned long int key_index;
 
-    if (key == NULL || size == 0)
-        exit(EXIT_FAILURE);
+	if (key == NULL || size == 0)
+		exit(EXIT_FAILURE);
 
-    hash = hash_djb2(key);
-    if (hash == 0)
-    {
-        fprintf(stderr, "hash_djb2 failed\n");
-        exit(EXIT_FAILURE);
-    }
+	hash = hash_djb2(key);
+	if (hash == 0)
+	{
+		fprintf(stderr, "hash_djb2 failed\n");
+		exit(EXIT_FAILURE);
+	}
 
-    key_index = hash % size;
+	key_index = hash % size;
 
-    return (key_index);
+	return (key_index);
 }

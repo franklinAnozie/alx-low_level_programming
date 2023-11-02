@@ -10,18 +10,18 @@
 
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-    char *value;
-    unsigned long int index;
+	char *value;
+	unsigned long int index;
 
-    if (ht == NULL || key == NULL)
-        return (NULL);
-    
-    index = key_index((const unsigned char *)key, ht->size);
+	if (ht == NULL || key == NULL)
+		return (NULL);
 
-    if (ht->array[index] == NULL)
-        return (NULL);
+	index = key_index((const unsigned char *)key, ht->size);
 
-    value = ht->array[index]->value;
-   
-    return (value);
+	if (ht->array[index] == NULL)
+		return (NULL);
+
+	value = ht->array[index]->value;
+
+	return (value);
 }

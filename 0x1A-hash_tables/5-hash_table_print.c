@@ -8,30 +8,31 @@
 
 void hash_table_print(const hash_table_t *ht)
 {
-    unsigned long int i;
-    int count = 0;
-    printf("{");
-    if (ht == NULL)
-        exit(EXIT_FAILURE);
-    for (i = 0; i < ht->size; i++)
-    {
-        if (ht->array[i] == NULL)
-            continue;
-        else
-        {
-            if (count == 0)
-            {
-                _printer(ht->array[i]);
-                count = 1;
-            }
-            else
-            {
-                printf(", ");
-                _printer(ht->array[i]);
-            }
-        }
-    }
-    printf("}\n");
+	unsigned long int i;
+	int count = 0;
+
+	printf("{");
+	if (ht == NULL)
+		exit(EXIT_FAILURE);
+	for (i = 0; i < ht->size; i++)
+	{
+		if (ht->array[i] == NULL)
+			continue;
+		else
+		{
+			if (count == 0)
+			{
+				_printer(ht->array[i]);
+				count = 1;
+			}
+			else
+			{
+				printf(", ");
+				_printer(ht->array[i]);
+			}
+		}
+	}
+	printf("}\n");
 }
 
 /**
@@ -42,11 +43,11 @@ void hash_table_print(const hash_table_t *ht)
 
 void _printer(hash_node_t *array)
 {
-    printf("'%s': '%s'", array->key, array->value);
-    while(array->next != NULL)
-    {
-        array = array->next;
-        printf(", ");
-        printf("'%s': '%s'", array->key, array->value);
-    }
+	printf("'%s': '%s'", array->key, array->value);
+	while (array->next != NULL)
+	{
+		array = array->next;
+		printf(", ");
+		printf("'%s': '%s'", array->key, array->value);
+	}
 }
