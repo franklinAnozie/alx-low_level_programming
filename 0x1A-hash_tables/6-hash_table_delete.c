@@ -34,6 +34,7 @@ void hash_table_delete(hash_table_t *ht)
 					ht->array[i] = ht->array[i]->next;
 					free_node(temp_node);
 				}
+				free(ht->array[i]);
 			}
 		}
 	}
