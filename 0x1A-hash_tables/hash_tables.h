@@ -73,6 +73,7 @@ typedef struct shash_table_s
 
 /* 0-hash_table_create.c */
 hash_table_t *hash_table_create(unsigned long int size);
+shash_table_t *shash_table_create(unsigned long int size);
 
 /* 1-djb2.c */
 unsigned long int hash_djb2(const unsigned char *str);
@@ -86,22 +87,21 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value);
 
 /* 4-hash_table_get.c */
 char *hash_table_get(const hash_table_t *ht, const char *key);
+char *shash_table_get(const shash_table_t *ht, const char *key);
 
 /* 5-hash_table_print.c */
 void hash_table_print(const hash_table_t *ht);
 void shash_table_print(const shash_table_t *ht);
+void shash_table_print_rev(const shash_table_t *ht);
 
 /* 6-hash_table_delete.c */
 void hash_table_delete(hash_table_t *ht);
-
-/* 100-sorted_hash_table.c */
-shash_table_t *shash_table_create(unsigned long int size);
-void shash_table_print(const shash_table_t *ht);
+void shash_table_delete(shash_table_t *ht);
 
 /* helper function */
 void _printer(hash_node_t *array);
-void _sprinter(shash_node_t *array);
 void free_node(hash_node_t *head);
+void sfree_node(shash_node_t *head);
 void update_sorted_list(shash_table_t *ht, shash_node_t *new_node);
 
 #endif
