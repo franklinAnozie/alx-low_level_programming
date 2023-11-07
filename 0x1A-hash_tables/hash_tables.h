@@ -100,8 +100,12 @@ void shash_table_delete(shash_table_t *ht);
 
 /* helper function */
 void _printer(hash_node_t *array);
+void _sprinter(shash_node_t *array);
 void free_node(hash_node_t *head);
 void sfree_node(shash_node_t *head);
-void update_sorted_list(shash_table_t *ht, shash_node_t *new_node);
+void u_s_l(shash_table_t *ht, shash_node_t *new_node, unsigned long int index);
+void set_head_tail(shash_table_t *ht, shash_node_t *new_node);
+void run_else(unsigned long int index, shash_table_t *ht, shash_node_t *t_node);
+void run_if(unsigned long int index, shash_table_t *ht, shash_node_t *c_node);
 
 #endif
