@@ -4,13 +4,13 @@ SRC = main.c school.c
 NAME = school
 OBJ = ${SRC:%.c=%.o}
 RM = rm -f
-
-
-%.o: %.c
-	$(CC) -c $< -o $@
+.PHONY: all fclean clean oclean re
 
 all: ${OBJ}
 		${CC} ${OBJ} -o ${NAME}
+
+%.o: %.c
+	$(CC) -c $< -o $@
 
 fclean: clean oclean
 
