@@ -73,7 +73,7 @@ int exponential_search(int *array, size_t size, int value)
 		end = sz - 1;
 	else
 		end = bound;
-	
+
 	printf("Value found between indexes [%d] and [%d]\n", start, end);
 
 	retval = bs(array, start, end, value);
