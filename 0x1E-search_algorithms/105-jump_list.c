@@ -11,14 +11,15 @@
 
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-	listint_t *head, *tail;
+	listint_t *head = list, *tail = list;
 	int sz = (int) size, jump;
 
 	if (list == NULL)
 		return (NULL);
 
-	for (head = tail = list; tail->n > value; head = tail)
+	while (tail->n < value)
 	{
+		head = tail;
 		jump = (int) sqrt(sz);
 		while (jump)
 		{
