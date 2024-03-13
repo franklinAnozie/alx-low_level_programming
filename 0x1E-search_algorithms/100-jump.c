@@ -27,7 +27,7 @@ int jump_search(int *array, size_t size, int value)
 		if (end >= n_size)
 			break;
 	}
-	if (end > n_size)
+	if (end >= n_size)
 		iter = n_size - start;
 	else
 		iter = end - start + 1;
